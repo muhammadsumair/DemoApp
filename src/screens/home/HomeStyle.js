@@ -69,9 +69,9 @@ export default HomeStyle = StyleSheet.create({
         backgroundColor: '#fff'
     },
     instaIcon: {
-        borderRadius: (Platform.OS === 'ios') ? 100 / 2 : 100,
-        width: 25,
-        height: 25
+        // borderRadius: (Platform.OS === 'ios') ? 100 / 2 : 100,
+        width: 20,
+        height: 20
     },
     profileDetailContainer: {
         paddingTop: 50,
