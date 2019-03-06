@@ -125,12 +125,11 @@ export default HomeStyle = StyleSheet.create({
     tabContainer: {
         marginHorizontal: 10,
         alignItems:'center',
-        marginVertical:10,
-        borderBottomWidth: 5,
-        borderBottomColor:'#696b78'
+        marginVertical:10
     },
     tabActiveContainer: {
-        borderBottomColor:'#1DA218'
+        borderBottomColor:'#1DA218',
+        borderBottomWidth: 5
     },
     tabIconContainer: {
         borderRadius: 50,
