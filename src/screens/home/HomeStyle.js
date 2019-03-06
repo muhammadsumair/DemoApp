@@ -12,17 +12,24 @@ export default HomeStyle = StyleSheet.create({
         flex: 1,
         position: 'relative'
     },
-    profileHeaderContainer: {
-        alignItems: 'center',
-        flex: 1
-
+    profileIconsContainer: {
+        flex:1,
+        flexDirection: 'row',
+        marginHorizontal: 20,
+        marginTop: 60
     },
-    profileHeaderContainerImage: {
-        width: width,
+    qrcode: {
+        flex: 0.5
+    },
+    share: {
+        flex: 0.5, alignItems: 'flex-end'
+    },
+    profileHeaderContainer: {
+        width,
         height: 235,
         alignItems: 'center'
     },
-    profileHeaderImageBox: {
+    profileImageContainer: {
         alignItems: 'center',
         position: 'absolute',
         top: 180,
@@ -39,7 +46,7 @@ export default HomeStyle = StyleSheet.create({
         borderWidth: 1,
         borderColor: "#2a2a2a"
     },
-    profileHeaderWrapper: {
+    profileImageBox: {
         width:110,
         height: 110,
         borderRadius: (Platform.OS === 'ios') ? 100 / 2 : 100,
@@ -49,7 +56,24 @@ export default HomeStyle = StyleSheet.create({
         alignItems:'center',
         justifyContent: 'center'
     },
-    profileText: {
+    instaContainer: {
+        width: 30,
+        height: 30,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        top: 70,
+        left: 70,
+        zIndex: 1,
+        borderRadius: (Platform.OS === 'ios') ? 100 / 2 : 100,
+        backgroundColor: '#fff'
+    },
+    instaIcon: {
+        borderRadius: (Platform.OS === 'ios') ? 100 / 2 : 100,
+        width: 25,
+        height: 25
+    },
+    profileDetailContainer: {
         paddingTop: 50,
         backgroundColor: '#27283a',
         alignItems: 'center',
@@ -61,67 +85,36 @@ export default HomeStyle = StyleSheet.create({
         fontWeight:'bold',
         color: '#fff'
     },
-    list: {
-        paddingHorizontal: 22,
-        backgroundColor: '#efefef',
-        marginBottom: -1
+    profileDetail: {
+        color: '#fcfeff',
+        fontSize:16,
+        marginVertical: 15
     },
-    listItem: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        borderBottomWidth: 1,
-        borderBottomColor : '#bbbbbb',
-        paddingVertical: 15
-    },
-    readMoreContainer: {
+    ratingContainer: {
         flex: 1,
+        flexDirection: 'row',
         alignItems: 'center'
     },
-    listItemOverview: {
+    reviews: {
+        color: '#fcfeff',
+        marginHorizontal: 5
+    },
+    profileDetailButtonContainer: {
         flex: 1,
-        borderBottomWidth: 1,
-        borderBottomColor : '#bbbbbb',
-        paddingVertical: 15
+        alignItems:'center'
     },
-    listDetails: {
-        paddingHorizontal: 22,
-        backgroundColor: '#fafafa'
+    profileDetailButton: {
+        alignItems:'center',
+        marginTop: 20,
+        backgroundColor:'#fe0000',
+        borderRadius:50,
+        height: 30,
+        width: 155,
+        justifyContent: 'center'
     },
-    listItemIcon: {
-        fontSize: 20,
-        color: '#333333',
-        marginRight: 10,
-        marginLeft: 5
-    },
-    listText: {
-        fontSize: 13,
-        color : '#2a2a2a', flex: 1
-    },
-    cornerText: {
-        alignItems: 'flex-end',
-        fontSize: 17,
-        color: '#2a2a2a'
-    },
-    profileLinksContainer: {
-        paddingHorizontal: 23,
-        backgroundColor: '#fafafa'
-    },
-    profileLinksHeading: {
-        paddingVertical: 18,
-        color: '#2a2a2a',
-        fontSize: 13
-    },
-    singleLink: {
-        color: '#2a2a2a',
-        fontSize: 13,
-        paddingBottom: 19
-    },
-    footer: {
-        flexDirection: 'row',
-        marginTop: 5,
-        borderTopWidth: 1,
-        borderTopColor: '#bbbbbb',
-        marginHorizontal: 23,
-        paddingVertical: 15
+    profileDetailButtonText: {
+        fontSize:15,
+        color:'#ffdcec',
+        fontWeight: 'bold'
     }
 })

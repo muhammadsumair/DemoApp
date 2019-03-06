@@ -1,47 +1,70 @@
 import React, {Component} from 'react';
-import { ScrollView, Text, View, Image, Platform, TouchableOpacity} from 'react-native';
-import HomeStyle from "./HomeStyle";
-import Chart from '../../components/chart/Chart';
+import { ScrollView, Text, View, Image, ImageBackground, Platform, TouchableOpacity} from 'react-native';
 import StarRating from "react-native-star-rating/StarRating";
+import Icon from 'react-native-vector-icons/FontAwesome5';
+
+//Styles
+import HomeStyle from "./HomeStyle";
+
+//Components
+import Chart from '../../components/chart/Chart';
 
 class Home extends Component {
     render() {
         return (
-            <ScrollView style={{flex:1, backgroundColor:'#27283a'}}>
-                <View style={HomeStyle.mainContainer}>
-                    <View style={HomeStyle.profileHeader}>
-                        <Image source={require('../../assets/images/HeaderBg.png')}  style={HomeStyle.profileHeaderContainerImage}/>
-                        <View style={HomeStyle.profileHeaderImageBox}>
-                            <View style={HomeStyle.profileHeaderWrapper}>
-                                <Image
-                                    source={require('../../assets/images/ProfilePic.png')}
-                                    borderRadius={(Platform.OS === 'ios') ? 100 / 2 :  100}
-                                    style={HomeStyle.profileHeaderImage}/>
-                            </View>
-                        </View>
-                        <View style={HomeStyle.profileText}>
-                            <Text style={[HomeStyle.profileName]}>Anthony Martial</Text>
-                            <Text style={{color: '#fcfeff', fontSize:16, marginVertical: 15}}>Barber With 9 Year of Experience</Text>
-                            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                                <StarRating
-                                    disabled={false}
-                                    starSize={15}
-                                    maxStars={5}
-                                    rating={3.5}
-                                    fullStarColor={'#eb8b10'}
-                                    emptyStarColor={'#a15e31'}
+            <ScrollView style={HomeStyle.mainContainer}>
+                <View style={HomeStyle.profileHeader}>
 
-                                />
-                                <Text style={{color: '#fcfeff', marginHorizontal: 5}}>(17 Reviews)</Text>
-                            </View>
-                        </View>
-                        <View style={{alignItems:'center', marginTop: 20}}>
-                            <TouchableOpacity style={{backgroundColor:'#fe0000', borderRadius:50, height: 30, width: 155, alignItems:'center', justifyContent: 'center'}}>
-                                <Text style={{fontSize:15, color:'#ffdcec', fontWeight: 'bold'}}>View Profile</Text>
+                    <ImageBackground
+                        source={require('../../assets/images/HeaderBg.png')}
+                        style={HomeStyle.profileHeaderContainer}>
+                        <View style={HomeStyle.profileIconsContainer}>
+                            <TouchableOpacity style={HomeStyle.qrcode}>
+                                <Icon name={'qrcode'} size={28} />
+                            </TouchableOpacity>
+                            <TouchableOpacity style={HomeStyle.share}>
+                                <Icon name={'share-alt'} color={'#ffffff'} size={28} />
                             </TouchableOpacity>
                         </View>
-                        <Chart />
+                    </ImageBackground>
+
+                    <View style={HomeStyle.profileImageContainer}>
+                        <View style={HomeStyle.profileImageBox}>
+                            <Image
+                                source={require('../../assets/images/ProfilePic.png')}
+                                borderRadius={(Platform.OS === 'ios') ? 100 / 2 :  100}
+                                style={HomeStyle.profileHeaderImage}/>
+                            <TouchableOpacity style={HomeStyle.instaContainer}>
+                                <Image
+                                    source={require('../../assets/images/instagram.png')}
+                                    style={HomeStyle.instaIcon}/>
+                            </TouchableOpacity>
+                        </View>
                     </View>
+
+                    <View style={HomeStyle.profileDetailContainer}>
+                        <Text style={HomeStyle.profileName}>Anthony Martial</Text>
+                        <Text style={HomeStyle.profileDetail}>Barber With 9 Year of Experience</Text>
+                        <View style={HomeStyle.ratingContainer}>
+                            <StarRating
+                                disabled={false}
+                                starSize={15}
+                                maxStars={5}
+                                rating={3.5}
+                                fullStarColor={'#eb8b10'}
+                                emptyStarColor={'#a15e31'}
+                            />
+                            <Text style={HomeStyle.reviews}>(17 Reviews)</Text>
+                        </View>
+                    </View>
+
+                    <View style={HomeStyle.profileDetailButtonContainer}>
+                        <TouchableOpacity style={HomeStyle.profileDetailButton}>
+                            <Text style={HomeStyle.profileDetailButtonText}>View Profile</Text>
+                        </TouchableOpacity>
+                    </View>
+
+                    <Chart />
                 </View>
             </ScrollView>
         );
