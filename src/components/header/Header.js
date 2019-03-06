@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, Image, Platform} from 'react-native';
 import CompanyProfileStyle from './HeaderStyle';
+import Chart from '../chart/Chart';
 import StarRating from "react-native-star-rating/StarRating";
 
 const Header = (props) => {
@@ -29,6 +30,7 @@ const Header = (props) => {
                         <Text>(17 Reviews)</Text>
                     </View>
                 </View>
+                <Chart />
             </View>
         </View>
 
