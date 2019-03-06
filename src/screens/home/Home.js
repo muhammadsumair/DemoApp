@@ -63,7 +63,29 @@ class Home extends Component {
                             <Text style={HomeStyle.profileDetailButtonText}>View Profile</Text>
                         </TouchableOpacity>
                     </View>
+                    <View style={{marginVertical:10}}>
+                        <View style={{flexDirection:'row', justifyContent:'center', marginHorizontal:20}}>
+                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: 5, borderBottomColor:'green'}}>
+                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
 
+                                </View>
+                                <Text>Revenue</Text>
+                            </View>
+                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: .5, borderBottomColor:'#fff'}}>
+                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
+
+                                </View>
+                                <Text>Clients</Text>
+                            </View>
+                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: .5, borderBottomColor:'#fff'}}>
+                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
+
+                                </View>
+                                <Text style={{marginBottom: 10}}>Notifications</Text>
+                            </View>
+                        </View>
+                        <View style={{flex:1, backgroundColor: 'green',borderBottomWidth: .5, borderBottomColor:'#fff', marginTop: -10.5, marginHorizontal:10}}/>
+                    </View>
                     <Chart />
                 </View>
             </ScrollView>
