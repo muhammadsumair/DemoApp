@@ -10,7 +10,13 @@ import HomeStyle from "./HomeStyle";
 import Chart from '../../components/chart/Chart';
 
 class Home extends Component {
+    state = {
+        activeIndex: 0
+    };
+
     render() {
+        const { activeIndex } = this.state;
+
         return (
             <ScrollView style={HomeStyle.mainContainer}>
                 <View style={HomeStyle.profileHeader}>
@@ -63,28 +69,34 @@ class Home extends Component {
                             <Text style={HomeStyle.profileDetailButtonText}>View Profile</Text>
                         </TouchableOpacity>
                     </View>
+
                     <View style={{marginVertical:10}}>
-                        <View style={{flexDirection:'row', justifyContent:'center', marginHorizontal:20}}>
-                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: 5, borderBottomColor:'green'}}>
-                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
-
+                        <View style={HomeStyle.tabsContainer}>
+                            <View style={[HomeStyle.tabContainer, activeIndex === 0 && HomeStyle.tabActiveContainer]}>
+                                <View style={[HomeStyle.tabIconContainer, activeIndex === 0 && HomeStyle.tabActiveIconContainer]}>
+                                    <TouchableOpacity onPress={() => this.setState({ activeIndex: 0})}>
+                                        <Icon name={'hand-holding-usd'} color={`${activeIndex === 0 ? '#1DA218' : '#696b78'}`} size={40} />
+                                    </TouchableOpacity>
                                 </View>
-                                <Text>Revenue</Text>
+                                <Text style={[activeIndex === 0 ? HomeStyle.tabTextActive : HomeStyle.tabText]}>Revenue</Text>
                             </View>
-                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: .5, borderBottomColor:'#fff'}}>
-                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
-
+                            <View style={[HomeStyle.tabContainer, activeIndex === 1 && HomeStyle.tabActiveContainer]}>
+                                <View style={[HomeStyle.tabIconContainer, activeIndex === 1 && HomeStyle.tabActiveIconContainer]}>
+                                    <TouchableOpacity onPress={() => this.setState({ activeIndex: 1})}>
+                                        <Icon name={'users'} color={`${activeIndex === 1 ? '#1DA218' : '#696b78'}`} size={40} />
+                                    </TouchableOpacity>
                                 </View>
-                                <Text>Clients</Text>
+                                <Text style={[activeIndex === 1 ? HomeStyle.tabTextActive : HomeStyle.tabText]}>Clients</Text>
                             </View>
-                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: .5, borderBottomColor:'#fff'}}>
-                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
-
+                            <View style={[HomeStyle.tabContainer, activeIndex === 2 && HomeStyle.tabActiveContainer]}>
+                                <View style={[HomeStyle.tabIconContainer, activeIndex === 2 && HomeStyle.tabActiveIconContainer]}>
+                                    <TouchableOpacity onPress={() => this.setState({ activeIndex: 2})}>
+                                        <Icon name={'bell'} color={`${activeIndex === 2 ? '#1DA218' : '#696b78'}`} size={40} />
+                                    </TouchableOpacity>
                                 </View>
-                                <Text style={{marginBottom: 10}}>Notifications</Text>
+                                <Text style={[activeIndex === 2 ? HomeStyle.tabTextActive : HomeStyle.tabText]}>Notifications</Text>
                             </View>
                         </View>
-                        <View style={{flex:1, backgroundColor: 'green',borderBottomWidth: .5, borderBottomColor:'#fff', marginTop: -10.5, marginHorizontal:10}}/>
                     </View>
                     <Chart />
                 </View>

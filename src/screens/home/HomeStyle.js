@@ -106,7 +106,7 @@ export default HomeStyle = StyleSheet.create({
     profileDetailButton: {
         alignItems:'center',
         marginTop: 20,
-        backgroundColor:'#fe0000',
+        backgroundColor:'#E91010',
         borderRadius:50,
         height: 30,
         width: 155,
@@ -116,5 +116,38 @@ export default HomeStyle = StyleSheet.create({
         fontSize:15,
         color:'#ffdcec',
         fontWeight: 'bold'
+    },
+    tabsContainer: {
+        flexDirection:'row',
+        justifyContent:'center',
+        marginHorizontal:20
+    },
+    tabContainer: {
+        marginHorizontal: 10,
+        alignItems:'center',
+        marginVertical:10,
+        borderBottomWidth: 5,
+        borderBottomColor:'#696b78'
+    },
+    tabActiveContainer: {
+        borderBottomColor:'#1DA218'
+    },
+    tabIconContainer: {
+        borderRadius: 50,
+        height: 70,
+        width:70,
+        backgroundColor:'rgba(53, 54, 72, 0.4)',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    tabActiveIconContainer: {
+        backgroundColor:'rgba(25, 146, 21, 0.4)',
+    },
+    tabText: {
+        color: '#696b78',
+        marginBottom: 20
+    },
+    tabTextActive: {
+        color: '#1DA218'
     }
 })
