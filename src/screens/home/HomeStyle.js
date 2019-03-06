@@ -2,7 +2,7 @@ import { StyleSheet, Dimensions, Platform } from 'react-native'
 
 let {width, height} =  Dimensions.get('window');
 
-export default HeaderStyle = StyleSheet.create({
+export default HomeStyle = StyleSheet.create({
     mainContainer: {
         flex: 1,
         backgroundColor: '#fafafa'
