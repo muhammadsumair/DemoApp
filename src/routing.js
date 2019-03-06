@@ -1,79 +1,44 @@
 import React from 'react';
-import { TabNavigator, StackNavigator  } from 'react-navigation';
-import { StyleSheet } from 'react-native';
-import Home from "./home/Home";
-import Cart from "./cart/Cart";
-import Profile from "./profile/Profile";
-import Header from "./header/Header";
-import Icon from 'react-native-vector-icons/Octicons';
+import {
+    createStackNavigator,
+    createBottomTabNavigator
+} from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
-export const TabNav = TabNavigator({
-    'Home': {
+// Components
+import Home from "./screens/home/Home";
+import Settings from "./screens/settings/Settings";
+
+export const Tabs = createBottomTabNavigator({
+    Calender: {
         screen: Home,
         navigationOptions: {
-            header: ({navigation}) => {
-                return <Header title="Home" leftHandler={() => navigation.goBack(null)}/>
-            },
-            tabBarIcon: ({tintColor, focused}) => {
-                return <Icon name={'home'} color={ tintColor } style={styles.icon}/>
-            }
+            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     },
-    'Cart': {
-        screen: Cart,
+    Home: {
+        screen: Home,
         navigationOptions: {
-            header: ({navigation}) => {
-                return <Header title="Cart" leftHandler={() => navigation.goBack(null)}/>
-            },
-            tabBarIcon: ({tintColor, focused}) => {
-                return <Icon name={'three-bars'} color={ tintColor } style={styles.icon}/>
-            }
+            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     },
-    'Profile': {
-        screen: Profile,
+    Reviews: {
+        screen: Settings,
         navigationOptions: {
-            header: ({navigation}) => {
-                return <Header isProfile={true} title="Profile" leftHandler={() => navigation.goBack(null)}/>
-            },
-            tabBarIcon: ({tintColor, focused}) => {
-                return <Icon name={'person'} color={ tintColor } style={styles.icon}/>
-            }
+            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
+        }
+    },
+    Settings: {
+        screen: Settings,
+        navigationOptions: {
+            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     }
 },{
-    tabBarPosition: 'bottom',
-    swipeEnabled: true,
-    lazyLoad: true,
-    animationEnabled: false,
-    tabBarOptions: {
-        showLabel: false,
-        showIcon: true,
-        indicatorStyle: {
-            opacity: 0,
-        },
-        style: {
-            backgroundColor: '#7E6044',
-            paddingHorizontal: 50
-            // elevation: 8,
-            // shadowOpacity: 0,
-        },
-
-        activeTintColor: '#2E4847',
-        inactiveTintColor:'#415049',
-        pressColor: '#2E4847',
-
+    tabBarOptions:{
+        activeTintColor:'#ce1527',
+        inactiveTintColor:'#b9b9b9',
+        showLabel: true,
     }
 });
 
-export const Main = StackNavigator ({
-    MainTab: {
-        screen: TabNav,
-    }
-});
-
-const styles = StyleSheet.create({
-    icon: {
-        fontSize: 30,
-    }
-});
