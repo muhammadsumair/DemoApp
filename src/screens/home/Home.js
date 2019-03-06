@@ -35,11 +35,35 @@ class Home extends Component {
                                 <Text style={{color: '#fcfeff', marginHorizontal: 5}}>(17 Reviews)</Text>
                             </View>
                         </View>
-                        <View style={{alignItems:'center', marginTop: 20}}>
-                            <TouchableOpacity style={{backgroundColor:'#fe0000', borderRadius:50, height: 30, width: 155, alignItems:'center', justifyContent: 'center'}}>
-                                <Text style={{fontSize:15, color:'#ffdcec', fontWeight: 'bold'}}>View Profile</Text>
+                        <View style={{alignItems:'center', marginVertical: 20}}>
+                            <TouchableOpacity style={{backgroundColor:'#fe0000', borderRadius:50, height: 30, width: 155, alignItems:'center', justifyContent: 'center',}}>
+                                <Text style={{fontSize:15, color:'#ffff', fontWeight: 'bold'}}>View Profile</Text>
                             </TouchableOpacity>
                         </View>
+                        <View style={{marginVertical:10}}>
+                        <View style={{flexDirection:'row', justifyContent:'center', marginHorizontal:20}}>
+                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: 5, borderBottomColor:'green'}}>
+                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
+
+                                </View>
+                                <Text>Revenue</Text>
+                            </View>
+                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: .5, borderBottomColor:'#fff'}}>
+                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
+
+                                </View>
+                                <Text>Clients</Text>
+                            </View>
+                            <View style={{marginHorizontal: 10, alignItems:'center', marginVertical:10, borderBottomWidth: .5, borderBottomColor:'#fff'}}>
+                                <View style={{borderRadius: 50, height: 70, width:70, backgroundColor:'#fff'}}>
+
+                                </View>
+                                <Text style={{marginBottom: 10}}>Notifications</Text>
+                            </View>
+                        </View>
+                            <View style={{flex:1, backgroundColor: 'green',borderBottomWidth: .5, borderBottomColor:'#fff', marginTop: -10.5, marginHorizontal:10}}/>
+                        </View>
+
                         <Chart />
                     </View>
                 </View>
