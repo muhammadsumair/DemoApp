@@ -1,7 +1,8 @@
 import React from 'react';
 import {
     createStackNavigator,
-    createBottomTabNavigator
+    createBottomTabNavigator,
+    createTabNavigator
 } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -13,25 +14,25 @@ export const Tabs = createBottomTabNavigator({
     Calender: {
         screen: Home,
         navigationOptions: {
-            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
+            tabBarIcon: (f) => <Icon name={'home'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     },
     Home: {
         screen: Home,
         navigationOptions: {
-            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
+            tabBarIcon: (f) => <Icon name={'calendar'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     },
     Reviews: {
         screen: Settings,
         navigationOptions: {
-            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
+            tabBarIcon: (f) => <Icon name={'heart'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     },
     Settings: {
         screen: Settings,
         navigationOptions: {
-            tabBarIcon: (f) => <Icon name={'user'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
+            tabBarIcon: (f) => <Icon name={'cogs'} color={ f.focused ? f.tintColor : '#b9b9b9'} solid size={22} />
         }
     }
 },{
